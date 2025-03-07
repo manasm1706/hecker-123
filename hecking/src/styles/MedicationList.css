@@ -1,0 +1,132 @@
+/* Container for Medication List */
+.medication-list-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.medication-list-container:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* Header Section */
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 1rem;
+}
+
+/* Header Title */
+.list-header h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin: 0;
+    flex-grow: 1; /* Ensures title takes up remaining space */
+}
+
+/* Add Medication Button */
+.add-button {
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.9rem; /* Reduced size */
+    font-weight: 600;
+    padding: 0.5rem 1rem; /* Smaller padding */
+    border-radius: 6px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+    height: fit-content; /* Keeps it aligned with the text */
+    white-space: nowrap; /* Prevents wrapping */
+}
+
+/* Icon & Button Spacing */
+.add-button svg {
+    font-size: 1rem;
+}
+
+/* Hover Effect */
+.add-button:hover {
+    background: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Medication Sections */
+.medications-section {
+    margin-bottom: 2rem;
+}
+
+/* Section Titles */
+.medications-section h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: var(--secondary-dark);
+    margin-bottom: 1rem;
+}
+
+/* Grid Layout for Medications */
+.medications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 2rem;
+    background: var(--background-light);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.empty-state p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Add Medication Link in Empty State */
+.add-link {
+    font-size: 1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease-in-out;
+}
+
+.add-link:hover {
+    color: var(--primary-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .medication-list-container {
+        padding: 1.5rem;
+    }
+
+    .list-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .add-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+        width: auto;
+    }
+
+    .medications-grid {
+        grid-template-columns: 1fr;
+    }
+}
